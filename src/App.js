@@ -39,9 +39,10 @@ function App() {
 
       <div
         style={{
-          width: "270px",
-          margin: "40px 600px",
-          padding: "60px 60px",
+           display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
           backgroundColor: "white",
           borderRadius: "10px",
         }}
