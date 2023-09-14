@@ -1,24 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
+const Slot = ({ x, y, z }) => {
+  if (x === y && y === z) {
+    return (
+      <>
+        <h1>
+          {x} {y} {z}
+          <hr />
+        </h1>
+        <div>This is matching</div>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <h1>
+          {x} {y} {z}
+        </h1>
+        <hr />
+        <div>This is not matching</div>
+      </>
+    );
+  }
+};
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1
+        style={{
+          textAlign: "center",
+          backgroundColor: "white",
+          padding: "20px",
+        }}
+      >
+        🎰 Slot Machine Game
+      </h1>
+
+      <div
+        style={{
+          width: "270px",
+          margin: "40px 600px",
+          padding: "60px 60px",
+          backgroundColor: "white",
+          borderRadius: "10px",
+        }}
+      >
+        <Slot x="😄" y="😄" z="😄" />
+        <Slot x="🍌" y="🍎" z="👨" />
+        <Slot x="🍎" y="😄" z="👍" />
+        <Slot x="🦮" y="💯" z="😄" />
+      </div>
+    </>
   );
 }
 
